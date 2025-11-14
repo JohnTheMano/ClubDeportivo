@@ -1,0 +1,441 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\c#\\Proyectos\\ClubDeportivo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\entidades\\socio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:entidades\\socio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\presentacion\\frmmorosos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmmorosos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\presentacion\\frmregistrarpersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmregistrarpersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\presentacion\\frmentregarcarnet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmentregarcarnet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\presentacion\\frmentregarcarnet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmentregarcarnet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\presentacion\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\presentacion\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\presentacion\\frmpagarcuota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmpagarcuota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\presentacion\\frmpagarcuota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmpagarcuota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\presentacion\\frmpagarcuota.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmpagarcuota.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\presentacion\\frmregistrarpersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmregistrarpersona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\entidades\\cuota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:entidades\\cuota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\presentacion\\frmmorosos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmmorosos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\entidades\\pagoeventual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:entidades\\pagoeventual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\entidades\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:entidades\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\entidades\\nosocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:entidades\\nosocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\entidades\\actividad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:entidades\\actividad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\datos\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:datos\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\presentacion\\frmpruebaconexion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmpruebaconexion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\presentacion\\frmmorosos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmmorosos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\presentacion\\frmprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|c:\\c#\\proyectos\\clubdeportivo\\presentacion\\frmregistrarpersona.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmregistrarpersona.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\presentacion\\frmpruebaconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:presentacion\\frmpruebaconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|C:\\c#\\Proyectos\\ClubDeportivo\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15D138C6-37EB-42E7-B2A4-1D1C91A96AAC}|ClubDeportivo.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPrincipal.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmPrincipal.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\frmPrincipal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T04:44:03.375Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmEntregarCarnet.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmEntregarCarnet.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmEntregarCarnet.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmEntregarCarnet.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\frmEntregarCarnet.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:46:27.46Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmPagarCuota.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPagarCuota.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmPagarCuota.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPagarCuota.cs",
+              "RelativeToolTip": "Presentacion\\frmPagarCuota.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAgwIwAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T21:18:08.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmRegistrarPersona.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmRegistrarPersona.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmRegistrarPersona.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmRegistrarPersona.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\frmRegistrarPersona.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T15:20:23.055Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmMorosos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmMorosos.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmMorosos.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmMorosos.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Presentacion\\frmMorosos.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T18:09:41.693Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Socio.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\Socio.cs",
+              "RelativeDocumentMoniker": "Entidades\\Socio.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\Socio.cs",
+              "RelativeToolTip": "Entidades\\Socio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T14:55:39.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Cuota.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\Cuota.cs",
+              "RelativeDocumentMoniker": "Entidades\\Cuota.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\Cuota.cs",
+              "RelativeToolTip": "Entidades\\Cuota.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAwwCcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T18:08:06.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmPrincipal.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPrincipal.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmPrincipal.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPrincipal.cs",
+              "RelativeToolTip": "Presentacion\\frmPrincipal.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAlwCoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T21:03:06.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmEntregarCarnet.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmEntregarCarnet.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmEntregarCarnet.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmEntregarCarnet.cs",
+              "RelativeToolTip": "Presentacion\\frmEntregarCarnet.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAtwKIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T20:06:09.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmPagarCuota.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPagarCuota.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmPagarCuota.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPagarCuota.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\frmPagarCuota.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T20:56:42.074Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmPagarCuota.Designer.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPagarCuota.Designer.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmPagarCuota.Designer.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPagarCuota.Designer.cs",
+              "RelativeToolTip": "Presentacion\\frmPagarCuota.Designer.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAYwIcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T21:53:50.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmRegistrarPersona.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmRegistrarPersona.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmRegistrarPersona.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmRegistrarPersona.cs",
+              "RelativeToolTip": "Presentacion\\frmRegistrarPersona.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T15:25:49.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmMorosos.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmMorosos.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmMorosos.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmMorosos.cs*",
+              "RelativeToolTip": "Presentacion\\frmMorosos.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T18:13:29.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PagoEventual.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\PagoEventual.cs",
+              "RelativeDocumentMoniker": "Entidades\\PagoEventual.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\PagoEventual.cs",
+              "RelativeToolTip": "Entidades\\PagoEventual.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T11:51:50.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Persona.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\Persona.cs",
+              "RelativeDocumentMoniker": "Entidades\\Persona.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\Persona.cs",
+              "RelativeToolTip": "Entidades\\Persona.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA9wAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T14:54:59.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "NoSocio.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\NoSocio.cs",
+              "RelativeDocumentMoniker": "Entidades\\NoSocio.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\NoSocio.cs",
+              "RelativeToolTip": "Entidades\\NoSocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T14:58:30.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Actividad.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\Actividad.cs",
+              "RelativeDocumentMoniker": "Entidades\\Actividad.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Entidades\\Actividad.cs",
+              "RelativeToolTip": "Entidades\\Actividad.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T15:18:02.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Conexion.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Datos\\Conexion.cs",
+              "RelativeDocumentMoniker": "Datos\\Conexion.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Datos\\Conexion.cs",
+              "RelativeToolTip": "Datos\\Conexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T18:18:53.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "frmPruebaConexion.Designer.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPruebaConexion.Designer.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmPruebaConexion.Designer.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPruebaConexion.Designer.cs",
+              "RelativeToolTip": "Presentacion\\frmPruebaConexion.Designer.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwCAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T14:37:14.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T14:45:36.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "frmMorosos.Designer.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmMorosos.Designer.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmMorosos.Designer.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmMorosos.Designer.cs*",
+              "RelativeToolTip": "Presentacion\\frmMorosos.Designer.cs*",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T11:35:26.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "frmRegistrarPersona.Designer.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmRegistrarPersona.Designer.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmRegistrarPersona.Designer.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmRegistrarPersona.Designer.cs",
+              "RelativeToolTip": "Presentacion\\frmRegistrarPersona.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T11:06:59.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "frmPrincipal.Designer.cs",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPrincipal.Designer.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmPrincipal.Designer.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPrincipal.Designer.cs",
+              "RelativeToolTip": "Presentacion\\frmPrincipal.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T11:07:05.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "frmPruebaConexion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPruebaConexion.cs",
+              "RelativeDocumentMoniker": "Presentacion\\frmPruebaConexion.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Presentacion\\frmPruebaConexion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\frmPruebaConexion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T14:36:13.255Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\c#\\Proyectos\\ClubDeportivo\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\c#\\Proyectos\\ClubDeportivo\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T13:53:58.183Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
