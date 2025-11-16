@@ -28,45 +28,48 @@
             }
 
 
-        
 
-            private void btnCargarMorosos_Click_1(object sender, EventArgs e)
+
+        private void btnCargarMorosos_Click_1(object sender, EventArgs e)
+        {
+            try
             {
-                try
-                {
                 using (var conexion = new Conexion().ObtenerConexion())
-                    {
-                        conexion.Open();
-
-                        string query = @"
-                SELECT s.idSocio, p.nombre, p.apellido, p.dni, c.monto, c.fechaVencimiento
-                FROM socio s
-                INNER JOIN persona p ON s.idPersona = p.id
-                INNER JOIN cuota c ON s.idSocio = c.idSocio
-                WHERE c.fechaVencimiento < CURDATE()
-                ORDER BY c.fechaVencimiento ASC;";
-
-                        MySqlDataAdapter da = new MySqlDataAdapter(query, conexion);
-                        DataTable tabla = new DataTable();
-                        da.Fill(tabla);
-
-                        dgvMorosos.DataSource = tabla;
-                    }
-                }
-                catch (Exception ex)
                 {
-                    MessageBox.Show("❌ Error al cargar morosos: " + ex.Message);
+                    conexion.Open();
+
+                    // Consultar los morosos
+                            string query = @"
+                    SELECT s.idSocio, p.nombre, p.apellido, p.dni, 
+                           SUM(CASE WHEN c.fechaVencimiento < CURDATE() AND c.monto > 0 THEN c.monto ELSE 0 END) AS totalVencido
+                    FROM socio s
+                    INNER JOIN persona p ON s.idPersona = p.id
+                    LEFT JOIN cuota c ON s.idSocio = c.idSocio
+                    GROUP BY s.idSocio, p.nombre, p.apellido, p.dni
+                    HAVING totalVencido > 0
+                    ORDER BY totalVencido DESC;";
+
+                    MySqlDataAdapter da = new MySqlDataAdapter(query, conexion);
+                    DataTable tabla = new DataTable();
+                    da.Fill(tabla);
+
+                    dgvMorosos.DataSource = tabla;
                 }
-
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ Error al cargar morosos: " + ex.Message);
+            }
+        }
 
-        
-
-        
 
 
 
-            private void btnVolver_Click(object sender, EventArgs e)
+
+
+
+
+        private void btnVolver_Click(object sender, EventArgs e)
             {
                 if (formAnterior != null)
                 {

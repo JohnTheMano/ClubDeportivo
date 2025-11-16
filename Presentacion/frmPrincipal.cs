@@ -18,12 +18,12 @@ namespace ClubDeportivo.Presentacion
         }
 
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmRegistrarPersona ventana = new frmRegistrarPersona(this);
-            ventana.Show();
-        }
+            private void btnRegistrar_Click(object sender, EventArgs e)
+            {
+                this.Hide();
+                frmRegistrarPersona ventana = new frmRegistrarPersona(this);
+                ventana.Show();
+            }
         private void btnMorosos_Click(object sender, EventArgs e)
         {
             this.Hide();

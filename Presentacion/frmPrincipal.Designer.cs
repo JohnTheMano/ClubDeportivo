@@ -70,7 +70,7 @@
             this.btnPagarCuota.Name = "btnPagarCuota";
             this.btnPagarCuota.Size = new System.Drawing.Size(168, 90);
             this.btnPagarCuota.TabIndex = 3;
-            this.btnPagarCuota.Text = "Pagar Cuota";
+            this.btnPagarCuota.Text = "Pagar Cuota / Actividad";
             this.btnPagarCuota.UseVisualStyleBackColor = true;
             this.btnPagarCuota.Click += new System.EventHandler(this.btnPagarCuota_Click);
             // 

@@ -30,8 +30,8 @@
         {
             this.btnRegistrarPersonaPanel = new System.Windows.Forms.Button();
             this.panelDNI = new System.Windows.Forms.Panel();
-            this.btnVolverDNI = new System.Windows.Forms.Button();
             this.panelDatosPersonales = new System.Windows.Forms.Panel();
+            this.btnVolverDNI = new System.Windows.Forms.Button();
             this.rbNoSocio = new System.Windows.Forms.RadioButton();
             this.rdSocio = new System.Windows.Forms.RadioButton();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -42,10 +42,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnVolverMenu = new System.Windows.Forms.Button();
             this.btnContinuarDNI = new System.Windows.Forms.Button();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnVolverMenu = new System.Windows.Forms.Button();
             this.panelDNI.SuspendLayout();
             this.panelDatosPersonales.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,6 @@
             // 
             // panelDNI
             // 
-            this.panelDNI.Controls.Add(this.panelDatosPersonales);
             this.panelDNI.Controls.Add(this.btnVolverMenu);
             this.panelDNI.Controls.Add(this.btnContinuarDNI);
             this.panelDNI.Controls.Add(this.txtDNI);
@@ -72,16 +71,6 @@
             this.panelDNI.Size = new System.Drawing.Size(615, 417);
             this.panelDNI.TabIndex = 15;
             this.panelDNI.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDNI_Paint);
-            // 
-            // btnVolverDNI
-            // 
-            this.btnVolverDNI.Location = new System.Drawing.Point(369, 310);
-            this.btnVolverDNI.Name = "btnVolverDNI";
-            this.btnVolverDNI.Size = new System.Drawing.Size(75, 23);
-            this.btnVolverDNI.TabIndex = 17;
-            this.btnVolverDNI.Text = "Volver";
-            this.btnVolverDNI.UseVisualStyleBackColor = true;
-            this.btnVolverDNI.Click += new System.EventHandler(this.btnVolverDNI_Click);
             // 
             // panelDatosPersonales
             // 
@@ -97,11 +86,21 @@
             this.panelDatosPersonales.Controls.Add(this.label8);
             this.panelDatosPersonales.Controls.Add(this.txtNombre);
             this.panelDatosPersonales.Controls.Add(this.label7);
-            this.panelDatosPersonales.Location = new System.Drawing.Point(3, 3);
+            this.panelDatosPersonales.Location = new System.Drawing.Point(110, 12);
             this.panelDatosPersonales.Name = "panelDatosPersonales";
             this.panelDatosPersonales.Size = new System.Drawing.Size(615, 417);
             this.panelDatosPersonales.TabIndex = 16;
             this.panelDatosPersonales.Visible = false;
+            // 
+            // btnVolverDNI
+            // 
+            this.btnVolverDNI.Location = new System.Drawing.Point(369, 310);
+            this.btnVolverDNI.Name = "btnVolverDNI";
+            this.btnVolverDNI.Size = new System.Drawing.Size(75, 23);
+            this.btnVolverDNI.TabIndex = 17;
+            this.btnVolverDNI.Text = "Volver";
+            this.btnVolverDNI.UseVisualStyleBackColor = true;
+            this.btnVolverDNI.Click += new System.EventHandler(this.btnVolverDNI_Click);
             // 
             // rbNoSocio
             // 
@@ -190,6 +189,16 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Nombre";
             // 
+            // btnVolverMenu
+            // 
+            this.btnVolverMenu.Location = new System.Drawing.Point(277, 235);
+            this.btnVolverMenu.Name = "btnVolverMenu";
+            this.btnVolverMenu.Size = new System.Drawing.Size(75, 23);
+            this.btnVolverMenu.TabIndex = 3;
+            this.btnVolverMenu.Text = "Volver";
+            this.btnVolverMenu.UseVisualStyleBackColor = true;
+            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
+            // 
             // btnContinuarDNI
             // 
             this.btnContinuarDNI.Location = new System.Drawing.Point(242, 165);
@@ -216,22 +225,13 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Ingrese DNI:";
             // 
-            // btnVolverMenu
-            // 
-            this.btnVolverMenu.Location = new System.Drawing.Point(277, 235);
-            this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(75, 23);
-            this.btnVolverMenu.TabIndex = 3;
-            this.btnVolverMenu.Text = "Volver";
-            this.btnVolverMenu.UseVisualStyleBackColor = true;
-            this.btnVolverMenu.Click += new System.EventHandler(this.btnVolverMenu_Click);
-            // 
             // frmRegistrarPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelDNI);
+            this.Controls.Add(this.panelDatosPersonales);
             this.Name = "frmRegistrarPersona";
             this.Text = "frmRegistrarPersona";
             this.Click += new System.EventHandler(this.frmRegistrarPersona_Click);

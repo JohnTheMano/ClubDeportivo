@@ -45,3 +45,4 @@ C:\c#\Proyectos\ClubDeportivo\obj\Debug\ClubDeportivo.Presentacion.frmRegistrarP
 C:\c#\Proyectos\ClubDeportivo\obj\Debug\ClubDeportivo.Presentacion.frmPrincipal.resources
 C:\c#\Proyectos\ClubDeportivo\obj\Debug\ClubDeportivo.Presentacion.frmEntregarCarnet.resources
 C:\c#\Proyectos\ClubDeportivo\obj\Debug\ClubDeportivo.Presentacion.frmPagarCuota.resources
+C:\c#\Proyectos\ClubDeportivo\obj\Debug\ClubDeportivo.Presentacion.FormularioLogin.resources

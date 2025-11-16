@@ -19,14 +19,12 @@ namespace ClubDeportivo.Presentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // Limpiamos los labels y mensaje al empezar
             lblNombre.Text = "";
             lblEstado.Text = "";
             lblCuotas.Text = "";
             lblMensaje.Text = "";
-            btnEntregar.Enabled = false;
+            btnEntregar.Enabled = false; // Deshabilitamos el botón al inicio
 
-            // Leer el DNI ingresado
             string dni = txtDNI.Text.Trim();
             if (string.IsNullOrEmpty(dni))
             {
@@ -40,59 +38,41 @@ namespace ClubDeportivo.Presentacion
                 {
                     conexion.Open();
 
-                    // Buscar datos del socio por DNI
+                    // Consulta para verificar las condiciones
                     string consulta = @"
-                SELECT s.idSocio, s.estado, p.nombre, p.apellido
-                FROM socio s
-                INNER JOIN persona p ON s.idPersona = p.id
-                WHERE p.dni = @dni";
+                SELECT 
+                    p.nombre, 
+                    p.dni, 
+                    s.tieneCarnet, 
+                    s.estado, 
+                    SUM(c.monto) AS deudaPendiente
+                FROM persona p
+                INNER JOIN socio s ON p.id = s.idPersona
+                LEFT JOIN cuota c ON s.idSocio = c.idSocio 
+                    AND c.monto > 0
+                    AND c.fechaVencimiento < CURDATE()
+                WHERE p.dni = @dni
+                GROUP BY p.id, s.idSocio
+                HAVING s.estado = 1
+                    AND s.tieneCarnet = 0
+                    AND (SUM(c.monto) = 0 OR SUM(c.monto) IS NULL)";
 
                     using (var comando = new MySql.Data.MySqlClient.MySqlCommand(consulta, conexion))
                     {
                         comando.Parameters.AddWithValue("@dni", dni);
-
                         using (var lector = comando.ExecuteReader())
                         {
                             if (lector.Read())
                             {
-                                // Obtenemos el idSocio
-                                int idSocio = Convert.ToInt32(lector["idSocio"]);
-
-                                // Mostramos info del socio
-                                lblNombre.Text = lector["nombre"].ToString() + " " + lector["apellido"].ToString();
-                                bool estado = Convert.ToBoolean(lector["estado"]);
-                                lblEstado.Text = estado ? "Activo" : "Inactivo";
-
-                                lector.Close(); // cerramos antes de la segunda consulta
-
-                                // Verificar cuotas vencidas
-                                string consultaCuotas = @"
-                            SELECT COUNT(*) 
-                            FROM cuota 
-                            WHERE idSocio = @idSocio 
-                              AND fechaVencimiento < CURDATE()";
-
-                                using (var comandoCuotas = new MySql.Data.MySqlClient.MySqlCommand(consultaCuotas, conexion))
-                                {
-                                    comandoCuotas.Parameters.AddWithValue("@idSocio", idSocio);
-                                    int cuotasVencidas = Convert.ToInt32(comandoCuotas.ExecuteScalar());
-
-                                    if (cuotasVencidas > 0)
-                                    {
-                                        lblCuotas.Text = $"Tiene {cuotasVencidas} cuota(s) vencida(s).";
-                                        btnEntregar.Enabled = false; // no puede entregar carnet
-                                    }
-                                    else
-                                    {
-                                        lblCuotas.Text = "Cuotas al día.";
-                                        // Solo habilitamos botón si está activo
-                                        btnEntregar.Enabled = estado;
-                                    }
-                                }
+                                lblNombre.Text = lector["nombre"].ToString();
+                                lblEstado.Text = "Activo";
+                                lblCuotas.Text = "Cuotas al día.";
+                                btnEntregar.Enabled = true; // Si se cumplen todas las condiciones, habilitamos el botón
                             }
                             else
                             {
-                                lblMensaje.Text = "No se encontró el socio con ese DNI.";
+                                lblMensaje.Text = "El socio tiene deuda pendiente, o ya tiene el carnet.";
+                                btnEntregar.Enabled = false; // Deshabilitamos el botón si no cumple las condiciones
                             }
                         }
                     }
@@ -103,6 +83,10 @@ namespace ClubDeportivo.Presentacion
                 lblMensaje.Text = "Error al buscar el socio: " + ex.Message;
             }
         }
+
+
+
+
 
         private void btnEntregar_Click(object sender, EventArgs e)
         {

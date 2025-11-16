@@ -1,0 +1,6 @@
+# Carpetas de Visual Studio (¡Esto evita el error de permisos!)
+.vs/
+
+# Binarios y carpetas de compilación
+[Bb]in/
+[Oo]bj/

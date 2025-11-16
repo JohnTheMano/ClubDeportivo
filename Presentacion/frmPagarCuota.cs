@@ -1,7 +1,8 @@
-﻿using System;
+﻿using ClubDeportivo.Datos;
+using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace ClubDeportivo.Presentacion
 {
@@ -49,9 +50,9 @@ namespace ClubDeportivo.Presentacion
 
                     // Buscar socio
                     string consultaSocio = @"SELECT s.idSocio, p.nombre, p.apellido 
-                                             FROM socio s
-                                             INNER JOIN persona p ON s.idPersona = p.id
-                                             WHERE p.dni = @dni";
+                                     FROM socio s
+                                     INNER JOIN persona p ON s.idPersona = p.id
+                                     WHERE p.dni = @dni";
                     using (var comando = new MySqlCommand(consultaSocio, conexion))
                     {
                         comando.Parameters.AddWithValue("@dni", dni);
@@ -65,6 +66,10 @@ namespace ClubDeportivo.Presentacion
                                 lblMensaje.Text = "Es socio. ID: " + idSocio;
                                 lector.Close();
 
+                                // Calcular la deuda pendiente
+                                decimal deudaPendiente = CalcularDeuda(idSocio);
+                                lblDeuda.Text = $"Deuda pendiente: ${deudaPendiente}";  // Mostramos la deuda
+
                                 HabilitarCampos();
                                 return;
                             }
@@ -73,9 +78,9 @@ namespace ClubDeportivo.Presentacion
 
                     // Buscar no socio
                     string consultaNoSocio = @"SELECT n.idNoSocio, p.nombre, p.apellido 
-                                               FROM nosocio n
-                                               INNER JOIN persona p ON n.idPersona = p.id
-                                               WHERE p.dni = @dni";
+                                       FROM nosocio n
+                                       INNER JOIN persona p ON n.idPersona = p.id
+                                       WHERE p.dni = @dni";
                     using (var comando = new MySqlCommand(consultaNoSocio, conexion))
                     {
                         comando.Parameters.AddWithValue("@dni", dni);
@@ -109,6 +114,7 @@ namespace ClubDeportivo.Presentacion
                 lblMensaje.Text = "Error al buscar: " + ex.Message;
             }
         }
+
 
         private void HabilitarCampos()
         {
@@ -175,44 +181,81 @@ namespace ClubDeportivo.Presentacion
                 {
                     conexion.Open();
 
-                    if (esSocio)
+                    // Verificar deuda total de cuotas vencidas antes del pago
+                    decimal totalDeuda = 0;
+                    using (var cmdDeuda = new MySqlCommand(@"
+                SELECT SUM(monto) 
+                FROM cuota
+                WHERE idSocio = @idSocio AND fechaVencimiento < CURDATE() AND monto > 0;
+            ", conexion))
                     {
-                        string insertarCuota = @"INSERT INTO cuota (idSocio, monto, fechaVencimiento, medioPago)
-                                                 VALUES (@idSocio, @monto, @fecha, @medio)";
-                        using (var comando = new MySqlCommand(insertarCuota, conexion))
+                        cmdDeuda.Parameters.AddWithValue("@idSocio", idSocio);
+                        var result = cmdDeuda.ExecuteScalar();
+                        totalDeuda = result != DBNull.Value ? Convert.ToDecimal(result) : 0;
+                    }
+
+                    if (totalDeuda > 0)
+                    {
+                        // Registrar pago en la tabla cuota
+                        string insertarPago = @"INSERT INTO cuota (idSocio, monto, fechaVencimiento, medioPago)
+                                        VALUES (@idSocio, @monto, @fecha, @medio)";
+                        using (var comando = new MySqlCommand(insertarPago, conexion))
                         {
                             comando.Parameters.AddWithValue("@idSocio", idSocio);
                             comando.Parameters.AddWithValue("@monto", nudMonto.Value);
-                            comando.Parameters.AddWithValue("@fecha", dtpFechaPago.Value.Date);
+                            var fechaVencimiento = dtpFechaPago.Value.Date.AddMonths(1); // Vencimiento para la nueva cuota
+                            comando.Parameters.AddWithValue("@fecha", fechaVencimiento);
                             comando.Parameters.AddWithValue("@medio", medioPago);
                             comando.ExecuteNonQuery();
                         }
-                        lblMensaje.Text = "Pago de cuota registrado correctamente.";
+
+                        // Procesar la deuda y descontar el pago realizado
+                        decimal montoRestante = nudMonto.Value;
+
+                        // Descontar el monto de las cuotas vencidas
+                        string actualizarCuotas = @"
+                    UPDATE cuota 
+                    SET monto = GREATEST(monto - @montoPago, 0) -- Resta el pago, no puede ser menor que 0
+                    WHERE idSocio = @idSocio AND fechaVencimiento < CURDATE() AND monto > 0
+                    LIMIT 1";
+                        using (var comandoActualizarCuotas = new MySqlCommand(actualizarCuotas, conexion))
+                        {
+                            comandoActualizarCuotas.Parameters.AddWithValue("@idSocio", idSocio);
+                            comandoActualizarCuotas.Parameters.AddWithValue("@montoPago", montoRestante);
+                            comandoActualizarCuotas.ExecuteNonQuery();
+                        }
+
+                        // Recalcular la deuda restante después de descontar el pago
+                        string consultaDeudaRestante = @"
+                    SELECT SUM(monto) 
+                    FROM cuota 
+                    WHERE idSocio = @idSocio AND fechaVencimiento < CURDATE() AND monto > 0";
+                        using (var cmdDeudaRestante = new MySqlCommand(consultaDeudaRestante, conexion))
+                        {
+                            cmdDeudaRestante.Parameters.AddWithValue("@idSocio", idSocio);
+                            var deudaRestante = cmdDeudaRestante.ExecuteScalar();
+                            decimal deudaTotalRestante = deudaRestante != DBNull.Value ? Convert.ToDecimal(deudaRestante) : 0;
+
+                            // Mostrar el mensaje adecuado
+                            if (deudaTotalRestante <= 0)
+                            {
+                                lblMensaje.Text = "Pago registrado correctamente. La deuda ha sido saldada.";
+                            }
+                            else
+                            {
+                                lblMensaje.Text = $"Pago registrado. Deuda restante: ${deudaTotalRestante}.";
+                            }
+
+                            // Actualizamos el lblDeuda para mostrar la deuda actualizada
+                            lblDeuda.Text = $"Deuda pendiente: ${deudaTotalRestante}";
+                        }
                     }
                     else
                     {
-                        if (cmbActividad.SelectedItem == null)
-                        {
-                            lblMensaje.Text = "Seleccione una actividad.";
-                            return;
-                        }
-
-                        int idActividad = ((ComboboxItem)cmbActividad.SelectedItem).Value;
-                        string insertarPago = @"INSERT INTO pago_eventual (idNoSocio, idActividad, monto, medioPago, fechaPago)
-                                                VALUES (@idNoSocio, @idActividad, @monto, @medio, @fecha)";
-                        using (var comando = new MySqlCommand(insertarPago, conexion))
-                        {
-                            comando.Parameters.AddWithValue("@idNoSocio", idNoSocio);
-                            comando.Parameters.AddWithValue("@idActividad", idActividad);
-                            comando.Parameters.AddWithValue("@monto", nudMonto.Value);
-                            comando.Parameters.AddWithValue("@medio", medioPago);
-                            comando.Parameters.AddWithValue("@fecha", dtpFechaPago.Value.Date);
-                            comando.ExecuteNonQuery();
-                        }
-                        lblMensaje.Text = "Pago de actividad registrado correctamente.";
+                        lblMensaje.Text = "No hay deuda pendiente.";
                     }
 
-                    // Habilitar imprimir comprobante
+                    // Habilitar la opción de imprimir comprobante solo si se realizó el pago
                     btnImprimirComprobante.Enabled = true;
                 }
             }
@@ -221,6 +264,158 @@ namespace ClubDeportivo.Presentacion
                 lblMensaje.Text = "Error al registrar pago: " + ex.Message;
             }
         }
+
+
+        private void lblMensaje_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+        private decimal CalcularDeuda(int idSocio)
+        {
+            decimal deudaPendiente = 0;
+
+            try
+            {
+                using (var conexion = new ClubDeportivo.Datos.Conexion().ObtenerConexion())
+                {
+                    conexion.Open();
+
+                    string consultaDeuda = @"
+                SELECT SUM(c.monto) 
+                FROM cuota c 
+                WHERE c.idSocio = @idSocio AND c.fechaVencimiento < CURDATE() AND c.monto > 0";
+                    using (var comando = new MySqlCommand(consultaDeuda, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@idSocio", idSocio);
+                        var resultado = comando.ExecuteScalar();
+                        deudaPendiente = resultado != DBNull.Value ? Convert.ToDecimal(resultado) : 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblDeuda.Text = "Error al calcular deuda: " + ex.Message;
+            }
+
+            return deudaPendiente;
+        }
+
+        private void lblDeuda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica que quieres que ocurra cuando cambie la selección
+            MessageBox.Show("Seleccionaste: " + comboBox1.SelectedItem.ToString());
+        }
+
+        private void rbTarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            // Si el usuario selecciona "Tarjeta", mostramos el ComboBox
+            if (rbTarjeta.Checked)
+            {
+                comboBox1.Visible = true;  // Hacemos visible el ComboBox
+            }
+            else
+            {
+                comboBox1.Visible = false;  // Lo ocultamos si no es Tarjeta
+            }
+        }
+
+        private void cmbActividad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verifica si la actividad seleccionada es "Gimnasio"
+            if (cmbActividad.SelectedItem.ToString() == "Gimnasio")
+            {
+                // Habilitar el CheckBox de Apto Físico
+                checkBoxAptoFisico.Enabled = true;  // Habilitar
+                checkBoxAptoFisico.Visible = true;  // Hacerlo visible
+
+            }
+            else
+            {
+                // Deshabilitar el CheckBox de Apto Físico
+                checkBoxAptoFisico.Enabled = false;  // Deshabilitar
+                checkBoxAptoFisico.Visible = false;  // Ocultarlo
+            }
+        }
+
+        private void frmPagarCuota_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var conexion = new Conexion().ObtenerConexion())
+                {
+                    conexion.Open();
+
+                    // Consulta para obtener las actividades
+                    string query = "SELECT nombre FROM actividad";
+
+                    MySqlDataAdapter da = new MySqlDataAdapter(query, conexion);
+                    DataTable tabla = new DataTable();
+                    da.Fill(tabla);
+
+                    cmbActividad.Items.Clear(); // Limpiar el ComboBox antes de agregar las actividades
+
+                    // Agregar las actividades al ComboBox
+                    foreach (DataRow row in tabla.Rows)
+                    {
+                        cmbActividad.Items.Add(row["nombre"].ToString());
+                    }
+
+                    cmbActividad.SelectedItem = null; // Dejar el ComboBox vacío al principio
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ Error al cargar actividades: " + ex.Message);
+            }
+        }
+
+        private void checkBoxAptoFisico_CheckedChanged(object sender, EventArgs e)
+        {
+            // Cuando el CheckBox cambia de estado
+            if (checkBoxAptoFisico.Checked)
+            {
+                MessageBox.Show("¡Apto físico habilitado!");
+            }
+            else
+            {
+                MessageBox.Show("¡Apto físico deshabilitado!");
+            }
+        }
+
+        private void btnImprimirComprobante_Click(object sender, EventArgs e)
+        {
+            // Obtener los datos para el comprobante
+            string nombreSocio = lblNombre.Text;  // El nombre del socio
+            string actividadSeleccionada = cmbActividad.SelectedItem != null ? cmbActividad.SelectedItem.ToString() : "Ninguna actividad seleccionada";
+            decimal montoPagado = nudMonto.Value;
+            string medioPago = rbEfectivo.Checked ? "Efectivo" :
+                               rbTarjeta.Checked ? "Tarjeta" :
+                               rbTransferencia.Checked ? "Transferencia" : "No seleccionado";
+            bool aptoFisicoSeleccionado = checkBoxAptoFisico.Checked;
+
+            // Crear el texto para el comprobante
+            string comprobante = "Comprobante de Pago\n\n";
+            comprobante += $"Socio: {nombreSocio}\n";
+            comprobante += $"Actividad: {actividadSeleccionada}\n";
+            comprobante += $"Monto Pagado: ${montoPagado}\n";
+            comprobante += $"Medio de Pago: {medioPago}\n";
+            comprobante += $"Apto Físico: {(aptoFisicoSeleccionado ? "Sí" : "No")}\n";
+            comprobante += $"\nFecha: {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}\n";
+
+            // Mostrar el comprobante en un MessageBox
+            MessageBox.Show(comprobante, "Comprobante de Pago", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 
     // Clase auxiliar para manejar ComboBox con valor

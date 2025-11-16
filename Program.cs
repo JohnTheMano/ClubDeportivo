@@ -1,8 +1,5 @@
 ﻿using ClubDeportivo.Presentacion;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClubDeportivo
@@ -15,9 +12,20 @@ namespace ClubDeportivo
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // 👇 Ahora inicia directamente en el formulario principal
-            Application.Run(new frmPrincipal());
+            // Creamos el formulario de login
+            FormularioLogin loginForm = new FormularioLogin();
 
+            // Mostramos el formulario de login, y si el login es correcto, se abre el formulario principal
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                // Si el login es correcto, mostramos el formulario principal
+                Application.Run(new frmPrincipal());
+            }
+            else
+            {
+                // Si el login es incorrecto, cerramos la aplicación
+                Application.Exit();
+            }
         }
     }
 }
